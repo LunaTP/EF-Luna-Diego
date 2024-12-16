@@ -18,7 +18,7 @@ public class ManageCarApi {
     @Autowired
     ManageService manageService;
 
-    @GetMapping("/allCars")
+    @GetMapping("/all")
     public FindCarsResponse findCars(){
 
         try{
@@ -35,7 +35,7 @@ public class ManageCarApi {
 
     }
 
-    @GetMapping("/detailCar")
+    @GetMapping("/detail")
     public FindCarResponse findCar(@RequestParam(value = "id", defaultValue = "0") String id){
 
         try{
@@ -53,7 +53,7 @@ public class ManageCarApi {
 
     }
 
-    @PutMapping("/updateCar")
+    @PutMapping("/update")
     public UpdateCarResponse updateCar(@RequestBody CarDto carDto){
 
         try{
@@ -70,7 +70,7 @@ public class ManageCarApi {
 
     }
 
-    @DeleteMapping("/deleteCar/{id}")
+    @DeleteMapping("/delete/{id}")
     public DeleteCarResponse deleteCar(@PathVariable String id) {
 
         try {
@@ -87,7 +87,7 @@ public class ManageCarApi {
 
     }
 
-    @PostMapping("/createCar")
+    @PostMapping("/create")
     public CreateCarResponse createCar(@RequestBody CarUpdateDto carUpdateDto) {
         try {
             if (manageService.addCar(carUpdateDto))
