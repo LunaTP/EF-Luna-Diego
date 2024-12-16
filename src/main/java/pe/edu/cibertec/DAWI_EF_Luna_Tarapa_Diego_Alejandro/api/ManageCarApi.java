@@ -43,7 +43,7 @@ public class ManageCarApi {
             return optional.map(car ->
                     new FindCarResponse("01",null,car)
             ).orElse(
-                    new FindCarResponse("01","Car not found",null)
+                    new FindCarResponse("02","Car not found",null)
             );
 
         }catch (Exception e){
